@@ -45,31 +45,6 @@ section {
     padding: 0 1em;
 }
 
-header {
-    padding: 10px;
-}
-
-header .user-image {
-    float: left;
-    width: 3.5em;
-    height: 3.5em;
-    margin: 4px 12px 4px 4px;
-    border: 1px solid black;
-    border-radius: 50%;
-}
-
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 10px;
-}
-
-header p {
-    color: #6a6a6a;
-    font-size: 1em;
-    margin: 10px;
-}
-
 article {
     padding: 1em 1em 2.5em ;
     margin: 2em 0;
@@ -80,94 +55,54 @@ article:last-child {
     border-bottom: none;
 }
 
+textarea {
+    resize: none;
+    width: 100%;
+    min-height: 200px;
+    padding: 0.8em;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+
 article .pg {
     padding-bottom: 1.5em;
 }
 
-#example1 {
-    width: 90%;
-    height: auto;
-    margin: 5%;
+.link_wrapper {
+    margin: 1em;
 }
 
-#reply .reply_list {
-    width: 100%;
-    height: 70px;
-    /* border: 1px solid black; */
-    margin: 1em 0;
-    display: flex;
-}
-
-.reply_list .user-image {
-    width: 3.5em;
-    height: 3.5em;
-    margin: 4px 1em;
-    border: 1px solid black;
-    border-radius: 50%;
-}
-
-.reply_list .name_date {
-    width: 50%;
-    text-align: justify;
-    line-height: 1.6em;
-}
-
-.reply_list .user_info {
-    width: 20%;
-    min-width: 180px;
-    display: flex;
-    align-items: center;
-}
-
-.reply_list .name_date h1 {
-    font-weight: bold;
-}
-
-.name_date .write_date {
-    font-size: 0.9em;
-}
-
-.user_info h1, .write_date {
+.link_name {
     display: inline-block;
+    width: 72px;
 }
 
-.reply_list .reply_main {
-    width: 80%;
-    padding: 0.7em;
+.ipt_link {
+    width: 50%;
 }
 
-#reply .reply_name {
-    width: 100%;
-    background-color: #eaeaea;
-    padding: 1em;
-    height: 50px;
-    /* font-size: 12px; */
+.btn_wrapper {
+    text-align: center;
+}
+
+.btn_reg {
+    width: 30%;
+    height: 36px;
     border: none;
     border-radius: 5px;
-    margin: 0.5em 0;
-}
-
-#reply .reply_content {
-    height: 200px;
-    width: 100%;
-    background-color: #eaeaea;
-    padding: 1em;
-    border: none;
-    border-radius: 5px;
-    margin: 0.5em 0;
-    resize: none;
-}
-
-#reply .btn_write {
-    width: 100%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    margin: 0.5em 0;
     background-color: #4400ff;
     color: #fff;
-    font-weight: bold;
 }
+
+.btn_reg:hover {
+    background-color: rgba(118, 68, 255);
+    transition: all linear 0.2s;
+}
+
+.btn_reg:not(:hover) {
+    transition: all linear 0.2s;
+}
+
 nav {
     width: 20%;
     height: 100%;
@@ -209,17 +144,6 @@ nav li a:not(:hover) {
         width: 100%;
     }
 
-    .reply_list .user_info {
-        width: 30%;
-        min-width: unset;
-    }
-
-    .reply_list .user-image {
-        width: 2em;
-        height: 2em;
-        margin: 0.5em;
-    }
-    
     nav {
         display: none;
     }
