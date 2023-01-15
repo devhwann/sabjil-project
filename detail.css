@@ -92,7 +92,7 @@ article .pg {
 
 #reply .reply_list {
     width: 100%;
-    height: 70px;
+    height: auto;
     /* border: 1px solid black; */
     margin: 1em 0;
     display: flex;
@@ -156,6 +156,11 @@ article .pg {
     border-radius: 5px;
     margin: 0.5em 0;
     resize: none;
+}
+
+.reply_name:focus, .reply_content:focus {
+    outline: 1px solid #4400ff;
+    transition: outline linear 0.5s;
 }
 
 #reply .btn_write {
