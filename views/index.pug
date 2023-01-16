@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  h1= title
+  p asdsad
+  //- p Welcome to #{title}
+  table
+    tbody
+      each comment in comments
+        tr          
+          td= comment.author
+          td= comment.content
+          td= comment.password          
+          td= formatDate(comment.createdAt)
+          td: input(type="submit" value="수정")
+          //- td: input(type="submit" value="삭제" )
+          td: button.delete(onclick='deletePost()') 삭제          
+  //- script(type="text/javascript").
+  //-   function deletePost() {
+  //-     prompt('비밀번호를 입력해주세요.')      
+  //-       .then((res) => {
+  //-         if (res.ok) {
+  //-           alert('삭제되었습니다.');
+  //-           window.location.href = '/posts';
+  //-         } else {
+  //-           alert('오류가 발생했습니다.');
+  //-         }
+  //-       })
+  //-       .catch((err) => {
+  //-         alert('오류가 발생했습니다.');
+  //-       });
+  //-   }
+  
+  //- div: input(type="submit" value="삭제")
+
+
+  div 
+  h1 댓글 등록하기
+  //- form(action=comments, method="post")    
+  form(action=comment ? "/comments/"+comment.shortId : "/comments", method="post")
+    div
+      label 비밀번호
+      input(type="text" name="password" value=comment&&comment.password)
+    div
+      label 내용
+      textarea(name="content")= comment&&comment.content
+      //- textarea(name="password")= comment&&comment.password
+      
+    //- div: input(type="submit" value=comment ? "수정":"등록")
+    div: input(type="submit" value="등록")      

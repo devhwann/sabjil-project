@@ -1,33 +1,31 @@
-const { Comment } = require("../models");
 const { Router } = require("express");
+const { Comment } = require("../models");
 
 const router = Router();
 
-router.get("/", async (req, res, next) => {
-  if (req.query.write) {
-    res.render("post/edit");
-    return;
-  }
-
-  const comments = await Comment.find({}); // 게시글 목록
-
-  res.render("index", { comments });
-});
-
 router.post("/", async (req, res, next) => {
-  const { content } = req.body;
+  const { password, content } = req.body;
 
   try {
-    if (!content) {
+    if (!password || !content) {
       throw new Error("내용을 입력해 주세요");
     }
 
     const comment = await Comment.create({
       content,
+      password,
     }); // 게시글 생성
+    res.redirect(`/`);
   } catch (err) {
     next(err);
   }
+});
+
+router.delete("/:password", async (req, res, next) => {
+  const { password } = req.params;
+
+  await Comment.deleteOne({ password });
+  res.send("OK");
 });
 
 module.exports = router;
