@@ -2,7 +2,7 @@ export function Article4({data}) {
   const list=[];
   for(let i=0; i<data.length; i++){
     list.push(
-      <div className="reply_list">
+      <div className="reply_list" key={data[i].id}>
         <div className="user_info">
           <img src="" className="user-image" alt="userImage"/>
           <div className="name_date">
